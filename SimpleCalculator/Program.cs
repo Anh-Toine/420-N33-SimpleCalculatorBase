@@ -21,8 +21,8 @@ namespace SimpleCalculator
             Console.WriteLine(" | |____ ____) | |____ / ____ \\| |___| |____ ");
             Console.WriteLine("  \\_____|_____/ \\_____/_/    \\_\\______\\_____|");
             Console.WriteLine("CSCALC: A basic implementation of a calculator in C#");
-            Console.WriteLine("Programmed by Manh-Anh Tuan Nguyen & Olivier Lemire, (c) 2020.");
-            while(startOver.Equals("y"))
+            Console.WriteLine("Made by Manh-Anh Tuan Nguyen & Olivier Lemire, (c) 2020.");
+            while (startOver.Equals("y"))
             {
                 bool error = true;
                 while (error)
@@ -34,10 +34,10 @@ namespace SimpleCalculator
 
                         //Class to perform actual calculations
                         CalculatorEngine calculatorEngine = new CalculatorEngine();
-                        Console.WriteLine("Please enter a number:");
+                        Console.WriteLine("Please enter a number(must be a double):");
                         double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
 
-                        Console.WriteLine("Great! Now enter another number:");
+                        Console.WriteLine("Great! Now enter another number(must be a double):");
                         double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
 
                         Console.WriteLine("What should I do with the 2 values?");
@@ -57,7 +57,7 @@ namespace SimpleCalculator
                     }
 
                 }
-                Console.WriteLine("Again?(Press y to start over)");
+                Console.WriteLine("Would you like to make another calculation?(Press y to start over)");
                 startOver = Console.ReadLine();
             }
 

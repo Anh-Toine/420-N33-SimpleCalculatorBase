@@ -39,13 +39,13 @@ namespace SimpleCalculator
                         Console.WriteLine(strbuild.ToString());
                         break;
                 default:
-                    strbuild.Append("-----------------------"+
+                    strbuild.Append("+-------------------+"+
                                     "\nUnsupported operator: "+argOperation+
                                     "\nList of supported operators(as of now):"+
                                     "\n1.Addition: \"plus\",\"add\",\"+\""+
                                     "\n2.Subtraction: \"minus\",\"subtract\",\"-\""+
                                     "\n3.Multiplication: \"multiply\",\"times\",\"*\""+
-                                    "\n4.Division: \"divide\",\"\\\"");
+                                    "\n4.Division: \"divide\",\"\\\""+"\n");
                         throw new InvalidOperationException(strbuild.ToString());
                 }
             return result;
