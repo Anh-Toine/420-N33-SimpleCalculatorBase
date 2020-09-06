@@ -15,27 +15,27 @@ namespace SimpleCalculator
                     case "plus":
                     case "+":
                         result = argFirstNumber + argSecondNumber;
-                        strbuild.Append(String.Format("{0} plus {1} equals {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
+                        strbuild.Append(String.Format("The value {0} plus the value {1} is equal to {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
                         Console.WriteLine(strbuild.ToString());
                         break;
                     case "subtract":
                     case "minus":
                     case "-":
                         result = argFirstNumber - argSecondNumber;
-                        strbuild.Append(String.Format("{0} minus {1} equals {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
+                        strbuild.Append(String.Format("The value {0} minus the value {1} is equal to {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
                         Console.WriteLine(strbuild.ToString());
                         break;
                     case "multiply":
                     case "times":
                     case "*":
                         result = argFirstNumber * argSecondNumber;
-                        strbuild.Append(String.Format("{0} times {1} equals {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
+                        strbuild.Append(String.Format("The value {0} times the value {1} is equal to {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
                         Console.WriteLine(strbuild.ToString());
                         break;
                     case "divide":
                     case "/":
                         result = argFirstNumber / argSecondNumber;
-                        strbuild.Append(String.Format("{0} divided by {1} equals {2:}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
+                        strbuild.Append(String.Format("The value {0} divided the value {1} is equal to {2}", Math.Round(argFirstNumber,2), Math.Round(argSecondNumber,2), Math.Round(result, 2)));
                         Console.WriteLine(strbuild.ToString());
                         break;
                 default:
