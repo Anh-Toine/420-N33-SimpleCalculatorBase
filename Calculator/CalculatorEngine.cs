@@ -38,6 +38,19 @@ namespace SimpleCalculator
                     strbuild.Append(String.Format("The value {0} divided the value {1} is equal to {2}", Math.Round(argFirstNumber, 2), Math.Round(argSecondNumber, 2), Math.Round(result, 2)));
                     Console.WriteLine(strbuild.ToString());
                     break;
+                case "root":
+                case "square root":
+                case "v":
+                    result = Math.Sqrt(argFirstNumber);
+                    strbuild.Append(String.Format("The square root of the first value you entered, {0}, is equal to {1}", Math.Round(argFirstNumber, 2), Math.Round(result, 2)));
+                    Console.WriteLine(strbuild.ToString());
+                    break;
+                case "power":
+                case "^":
+                    result = Math.Pow(argFirstNumber,argSecondNumber);
+                    strbuild.Append(String.Format("The value {0} to the power of the value {1} is equal to {2}", Math.Round(argFirstNumber, 2), Math.Round(argSecondNumber, 2), Math.Round(result, 2)));
+                    Console.WriteLine(strbuild.ToString());
+                    break;
                 default:
                     strbuild.Append("+-------------------+" +
                                     "\nUnsupported operator: " + argOperation +
@@ -45,7 +58,9 @@ namespace SimpleCalculator
                                     "\n1.Addition: \"plus\",\"add\",\"+\"" +
                                     "\n2.Subtraction: \"minus\",\"subtract\",\"-\"" +
                                     "\n3.Multiplication: \"multiply\",\"times\",\"*\"" +
-                                    "\n4.Division: \"divide\",\"\\\"" + "\n");
+                                    "\n4.Division: \"divide\",\"\\\"" + 
+                                    "\n5.Square Root:\"root\",\"square root\""+ 
+                                    "\n6.Power:\"power\",\"^\"");
                     throw new InvalidOperationException(strbuild.ToString());
             }
             return result;
