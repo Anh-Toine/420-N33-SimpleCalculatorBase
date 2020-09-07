@@ -115,7 +115,7 @@ namespace SimpleCalculator
                                     "\n4.Division: \"divide\",\"\\\"" + 
                                     "\n5.Square Root(first value):\"root1\",\"square root1\",\"sqr1\""+
                                     "\n6.Square Root(second value):\"root2\",\"square root2\",\"sqr2\"" +
-                                    "\n7.Power:\"power\",\"^\""+
+                                    "\n7.Power:\"power\",\"pow\""+
                                     "\n8(*).Bitwise AND: \"and\",\"&\"" +
                                     "\n9(*).Bitwise OR: \"or\",\"|\"" +
                                     "\n10(*).Bitwise XOR: \"xor\",\"^\"" +

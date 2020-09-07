@@ -34,8 +34,25 @@ namespace SimpleCalculator
             Console.WriteLine("  \\_____|_____/ \\_____/_/    \\_\\______\\_____|");
             Console.WriteLine("CSCALC: A basic implementation of a calculator in C#");
             Console.WriteLine("Made by Manh-Anh Tuan Nguyen & Olivier Lemire, (c) 2020.");
+            Console.WriteLine("You can press o at anytime to see the possible operators for the calculation");
+
             while (startOver.Equals("y"))
             {
+                StringBuilder str_options = new StringBuilder();
+                str_options.Append( "List of supported operators(as of now):" +
+                                    "\n1.Addition: \"plus\",\"add\",\"+\"" +
+                                    "\n2.Subtraction: \"minus\",\"subtract\",\"-\"" +
+                                    "\n3.Multiplication: \"multiply\",\"times\",\"*\"" +
+                                    "\n4.Division: \"divide\",\"\\\"" +
+                                    "\n5.Square Root(first value):\"root1\",\"square root1\",\"sqr1\"" +
+                                    "\n6.Square Root(second value):\"root2\",\"square root2\",\"sqr2\"" +
+                                    "\n7.Power:\"power\",\"pow\"" +
+                                    "\n8(*).Bitwise AND: \"and\",\"&\"" +
+                                    "\n9(*).Bitwise OR: \"or\",\"|\"" +
+                                    "\n10(*).Bitwise XOR: \"xor\",\"^\"" +
+                                    "\n11(*).Right shift: \"rightshift\",\">>\"" +
+                                    "\n12(*).Left shift: \"leftshift\",\"<<\"" +
+                                    "\n(*) Expect a floating point value to be truncated" + "\n");
                 bool error_num1 = true;
                 bool error_num2 = true;
                 bool error_opt = true;
@@ -43,10 +60,17 @@ namespace SimpleCalculator
                 {
                     try
                     {
-
                         Console.WriteLine("Please enter a number(must be a double):");
-                        firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                        error_num1 = false;
+                        string reader = Console.ReadLine();
+                        if (reader == "o")
+                        {
+                            Console.WriteLine(str_options);
+                        }
+                        else
+                        {
+                            firstNumber = inputConverter.ConvertInputToNumeric(reader);
+                            error_num1 = false;
+                        }
                     }
                     catch (Exception e)
                     {
@@ -59,8 +83,16 @@ namespace SimpleCalculator
                     try
                     {
                         Console.WriteLine("Now enter another number(must be a double):");
-                        secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                        error_num2 = false;
+                        string reader = Console.ReadLine();
+                        if (reader == "o")
+                        {
+                            Console.WriteLine(str_options);
+                        }
+                        else
+                        {
+                            secondNumber = inputConverter.ConvertInputToNumeric(reader);
+                            error_num2 = false;
+                        }   
                     }catch(Exception e)
                     {
                         Console.WriteLine(e.Message);
@@ -74,14 +106,21 @@ namespace SimpleCalculator
                     {
                         Console.WriteLine("What should I do with the 2 values?");
                         operation = Console.ReadLine();
-                        result = calculatorEngine.Calculate(operation.ToLower(), firstNumber, secondNumber);
-                        error_opt = false;
+                        if (operation == "o")
+                        {
+                            Console.WriteLine(str_options);
+                        }
+                        else
+                        {
+                            result = calculatorEngine.Calculate(operation.ToLower(), firstNumber, secondNumber);
+                            error_opt = false;
+                        }
                     }catch(Exception e)
                     {
                         Console.WriteLine(e.Message);
                         error_opt = true;
                     }
-                }      
+                }
                 Console.WriteLine("Would you like to do another calculation?(Press y to start over)");
                 startOver = Console.ReadLine();
             }
