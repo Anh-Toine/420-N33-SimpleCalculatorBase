@@ -45,6 +45,13 @@ namespace SimpleCalculator
                     strbuild.Append(String.Format("The square root of the first value you entered, {0}, is equal to {1}", Math.Round(argFirstNumber, 2), Math.Round(result, 2)));
                     Console.WriteLine(strbuild.ToString());
                     break;
+                case "root2":
+                case "square root2":
+                case "sqr2":
+                    result = Math.Sqrt(argSecondNumber);
+                    strbuild.Append(String.Format("The square root of the second value you entered, {0}, is equal to {1}", Math.Round(argSecondNumber, 2), Math.Round(result, 2)));
+                    Console.WriteLine(strbuild.ToString());
+                    break;
                 case "power":
                 case "pow":
                     result = Math.Pow(argFirstNumber,argSecondNumber);
