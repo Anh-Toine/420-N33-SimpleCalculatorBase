@@ -60,7 +60,7 @@ namespace SimpleCalculator
                 {
                     try
                     {
-                        Console.WriteLine("Please enter a number(must be a double):");
+                        Console.WriteLine("Please enter a number:");
                         string reader = Console.ReadLine();
                         if (reader == "o")
                         {
@@ -82,7 +82,7 @@ namespace SimpleCalculator
                 {
                     try
                     {
-                        Console.WriteLine("Now enter another number(must be a double):");
+                        Console.WriteLine("Now enter another number:");
                         string reader = Console.ReadLine();
                         if (reader == "o")
                         {
