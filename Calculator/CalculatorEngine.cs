@@ -72,6 +72,7 @@ namespace SimpleCalculator
                     break;
                 case "^":
                 case "xor":
+  
                     result = (int)argFirstNumber ^ (int)argSecondNumber;
                     strbuild.Append(String.Format("The bitwise XOR value of {0} and {1} is equal to {2}", (int)argFirstNumber, (int)argSecondNumber, result));
                     Console.WriteLine(strbuild.ToString());
