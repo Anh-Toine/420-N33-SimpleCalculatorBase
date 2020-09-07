@@ -12,26 +12,55 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            try
+            
+            string startOver = "y";
+            Console.WriteLine("   _____  _____  _____          _      _____ ");
+            Console.WriteLine("  / ____|/ ____|/ ____|   /\\   | |    / ____|");
+            Console.WriteLine(" | |    | (___ | |       /  \\  | |   | |     ");
+            Console.WriteLine(" | |     \\___ \\| |      / /\\ \\ | |   | |");
+            Console.WriteLine(" | |____ ____) | |____ / ____ \\| |___| |____ ");
+            Console.WriteLine("  \\_____|_____/ \\_____/_/    \\_\\______\\_____|");
+            Console.WriteLine("CSCALC: A basic implementation of a calculator in C#");
+            Console.WriteLine("Made by Manh-Anh Tuan Nguyen & Olivier Lemire, (c) 2020.");
+            while (startOver.Equals("y"))
             {
-                //Class to convert user input
-                InputConverter inputConverter = new InputConverter();
+                bool error = true;
+                while (error)
+                {
+                    try
+                    {
+                        //Class to convert user input
+                        InputConverter inputConverter = new InputConverter();
 
-                //Class to perform actual calculations
-                CalculatorEngine calculatorEngine = new CalculatorEngine();
+                        //Class to perform actual calculations
+                        CalculatorEngine calculatorEngine = new CalculatorEngine();
+                        Console.WriteLine("Please enter a number(must be a double):");
+                        double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
 
-                double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                string operation = Console.ReadLine();
+                        Console.WriteLine("Great! Now enter another number(must be a double):");
+                        double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
 
-                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+                        Console.WriteLine("What should I do with the 2 values?");
+                        string operation = Console.ReadLine();
 
-                Console.WriteLine(result);
+                        double result = calculatorEngine.Calculate(operation.ToLower(), firstNumber, secondNumber);
 
-            } catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+
+                        //Console.WriteLine("{0} result");
+                        error = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        error = true;
+                    }
+
+                }
+                Console.WriteLine("Would you like to make another calculation?(Press y to start over)");
+                startOver = Console.ReadLine();
             }
+
         }
     }
 }
