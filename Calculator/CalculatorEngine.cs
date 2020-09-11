@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace SimpleCalculator
+namespace CalculatorLib
 {
     public class CalculatorEngine
     {
